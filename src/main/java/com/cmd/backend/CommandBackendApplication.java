@@ -13,11 +13,13 @@ import com.cmd.backend.entity.Brand;
 import com.cmd.backend.entity.Category;
 import com.cmd.backend.entity.Command;
 import com.cmd.backend.entity.Customer;
+import com.cmd.backend.entity.Detail;
 import com.cmd.backend.entity.Product;
 import com.cmd.backend.repo.BrandRepository;
 import com.cmd.backend.repo.CategoryRepository;
 import com.cmd.backend.repo.CommandRepository;
 import com.cmd.backend.repo.CustomerRepository;
+import com.cmd.backend.repo.DetailRepository;
 import com.cmd.backend.repo.ProductRepository;
 
 @SpringBootApplication
@@ -35,6 +37,8 @@ public class CommandBackendApplication implements CommandLineRunner {
 	@Autowired
 	CommandRepository orderRepository;
 	
+	@Autowired
+	DetailRepository detailRepository;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(CommandBackendApplication.class, args);
@@ -84,12 +88,30 @@ public class CommandBackendApplication implements CommandLineRunner {
 		list2.add(p2);
 		list2.add(p3);
 		
-		Command cmd= new Command(new Date(),false,"espece",c1,list);
+		Command cmd= new Command(new Date(),false,"espece",c1);
 		orderRepository.save(cmd);
 		
-		Command cmd2= new Command(new Date(),false,"Cheque",c2,list2);
+		Detail d1=new Detail(5,p1,cmd);
+		detailRepository.save(d1);
+		Detail d2=new Detail(5,p2,cmd);
+		detailRepository.save(d2);
+		
+		
+		Command cmd2= new Command(new Date(),false,"Cheque",c2);
 		orderRepository.save(cmd2);
 	
+		Detail d3=new Detail(5,p1,cmd2);
+		detailRepository.save(d3);
+		Detail d4=new Detail(6,p2,cmd2);
+		detailRepository.save(d4);
+		Detail d5=new Detail(10,p3,cmd2);
+		detailRepository.save(d5);
+		
+		
+	    System.out.println("------------- "+detailRepository.getProducts(cmd2).get(1).getDesignation() + " ------------- ");
+		
+		
+		
 	}
 
 }

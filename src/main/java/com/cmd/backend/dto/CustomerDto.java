@@ -1,4 +1,4 @@
-package dto;
+package com.cmd.backend.dto;
 
 import java.io.Serializable;
 

@@ -1,34 +1,36 @@
-package dto;
+package com.cmd.backend.dto;
 
 import java.io.Serializable;
 
 
 
-public class BrandDto implements Serializable{
-
+public class CategoryDto implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	private Long id;
+	private long id;
 	private String designation;
 	
-	public BrandDto() {}
 	
-	public BrandDto( String designation) {
+	
+	public CategoryDto() {}
+
+	public CategoryDto( String designation) {
 		super();
 		this.designation = designation;
 	}
 	
-	public BrandDto(Long id, String designation) {
+	public CategoryDto(long id, String designation) {
 		super();
 		this.id = id;
 		this.designation = designation;
 	}
-	
-	public Long getId() {
+
+
+	public long getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	public String getDesignation() {
@@ -37,8 +39,7 @@ public class BrandDto implements Serializable{
 	public void setDesignation(String designation) {
 		this.designation = designation;
 	}
-	
-	
-	
+
+
 	
 }

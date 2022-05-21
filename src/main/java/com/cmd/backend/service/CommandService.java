@@ -4,20 +4,28 @@ import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.cmd.backend.dto.CommandDto;
+import com.cmd.backend.dto.DetailDto;
+import com.cmd.backend.dto.ProductDto;
 import com.cmd.backend.entity.Command;
+import com.cmd.backend.entity.Detail;
 import com.cmd.backend.entity.Product;
 import com.cmd.backend.exception.CommandNotFoundExceptin;
+import com.cmd.backend.mapper.CommandMapper;
+import com.cmd.backend.mapper.DetailMapper;
+import com.cmd.backend.mapper.ProductMapper;
 import com.cmd.backend.repo.CommandRepository;
-import dto.CommandDto;
-import dto.ProductDto;
-import mapper.CommandMapper;
-import mapper.ProductMapper;
+import com.cmd.backend.repo.DetailRepository;
 
 @Service
 public class CommandService implements ICommandService {
 
 	@Autowired
 	CommandRepository repository;
+	
+	@Autowired
+	DetailRepository detailRepository;
 	
 	@Override
 	public CommandDto get(Long id) throws CommandNotFoundExceptin {
@@ -61,16 +69,34 @@ public class CommandService implements ICommandService {
 	}
 
 	
+	
 	@Override
 	public List<ProductDto> getProducts(Long idCommand) throws CommandNotFoundExceptin {
 		
-        Command item  = repository.findById(idCommand).orElseThrow(()-> new CommandNotFoundExceptin("Command not found"));
+		    Command item  = repository.findById(idCommand).orElseThrow(()-> new CommandNotFoundExceptin("Command not found"));
 		
-        List<Product> listPrd = item.getOrderDetail();
-        
-    	List<ProductDto> listDto = listPrd.stream().map(product -> ProductMapper.fromEntity(product)).collect(Collectors.toList());
+		    List<Product> listPrd = detailRepository.getProducts(item);
+	        
+	    	List<ProductDto> listDto = listPrd.stream().map(product -> ProductMapper.fromEntity(product)).collect(Collectors.toList());
+			
+			return listDto;
 		
-		return listDto;
 	}
+	
+	
+    @Override
+	public List<DetailDto> getDetails(Long idCommand) throws CommandNotFoundExceptin {
+		
+		    Command cmd  = repository.findById(idCommand).orElseThrow(()-> new CommandNotFoundExceptin("Command not found"));
+		
+		    List<Detail> listPrd = detailRepository.getDetails(cmd);
+	        
+	    	List<DetailDto> listDto = listPrd.stream().map(item -> DetailMapper.fromEntity(item)).collect(Collectors.toList());
+		    
+		    
+			return listDto;
+		
+	}
+	
 
 }

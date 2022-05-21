@@ -37,10 +37,14 @@ public class Product implements Serializable{
 	@JoinColumn(name = "brand_id")
 	private Brand brand;
 	
-
+	
+	@OneToMany(mappedBy = "product",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private List<Detail> details;
+	
+	/*
 	@ManyToMany(mappedBy = "orderDetail")
 	private List<Command> orders;
-
+	 */
 	
 	public Product(){};
 	

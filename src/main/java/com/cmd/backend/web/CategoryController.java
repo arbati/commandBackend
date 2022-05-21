@@ -14,10 +14,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cmd.backend.dto.CategoryDto;
 import com.cmd.backend.exception.CategoryNotFoundExceptin;
 import com.cmd.backend.service.CategoryService;
-
-import dto.CategoryDto;
 
 @RestController
 @RequestMapping("category-rest")

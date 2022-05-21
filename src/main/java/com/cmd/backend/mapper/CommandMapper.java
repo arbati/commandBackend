@@ -1,10 +1,9 @@
-package mapper;
+package com.cmd.backend.mapper;
 
 import org.springframework.beans.BeanUtils;
 
+import com.cmd.backend.dto.CommandDto;
 import com.cmd.backend.entity.Command;
-
-import dto.CommandDto;
 
 
 public class CommandMapper {

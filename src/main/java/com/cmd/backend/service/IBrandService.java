@@ -2,9 +2,8 @@ package com.cmd.backend.service;
 
 import java.util.List;
 
+import com.cmd.backend.dto.BrandDto;
 import com.cmd.backend.exception.BrandNotFoundExceptin;
-
-import dto.BrandDto;
 
 public interface IBrandService {
 	

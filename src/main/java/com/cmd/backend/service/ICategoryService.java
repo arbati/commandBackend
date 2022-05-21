@@ -2,8 +2,8 @@ package com.cmd.backend.service;
 
 import java.util.List;
 
+import com.cmd.backend.dto.CategoryDto;
 import com.cmd.backend.exception.CategoryNotFoundExceptin;
-import dto.CategoryDto;
 
 public interface ICategoryService {
 	

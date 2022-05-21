@@ -2,8 +2,8 @@ package com.cmd.backend.service;
 
 import java.util.List;
 
+import com.cmd.backend.dto.CustomerDto;
 import com.cmd.backend.exception.CustomerNotFoundExceptin;
-import dto.CustomerDto;
 
 public interface ICustomerService {
 	

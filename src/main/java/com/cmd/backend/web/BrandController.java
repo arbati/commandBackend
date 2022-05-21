@@ -12,9 +12,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.cmd.backend.dto.BrandDto;
 import com.cmd.backend.exception.BrandNotFoundExceptin;
 import com.cmd.backend.service.BrandService;
-import dto.BrandDto;
 
 @RestController
 @RequestMapping("brand-rest")

@@ -1,10 +1,9 @@
-package mapper;
+package com.cmd.backend.mapper;
 
 import org.springframework.beans.BeanUtils;
 
+import com.cmd.backend.dto.BrandDto;
 import com.cmd.backend.entity.Brand;
-
-import dto.BrandDto;
 
 
 public class BrandMapper {

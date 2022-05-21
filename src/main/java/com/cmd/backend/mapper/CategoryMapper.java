@@ -1,10 +1,9 @@
-package mapper;
+package com.cmd.backend.mapper;
 
 import org.springframework.beans.BeanUtils;
 
+import com.cmd.backend.dto.CategoryDto;
 import com.cmd.backend.entity.Category;
-
-import dto.CategoryDto;
 
 
 public class CategoryMapper {

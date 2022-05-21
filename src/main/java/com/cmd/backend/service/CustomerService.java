@@ -6,12 +6,11 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.cmd.backend.dto.CustomerDto;
 import com.cmd.backend.entity.Customer;
 import com.cmd.backend.exception.CustomerNotFoundExceptin;
+import com.cmd.backend.mapper.CustomerMapper;
 import com.cmd.backend.repo.CustomerRepository;
-
-import dto.CustomerDto;
-import mapper.CustomerMapper;
 @Service
 public class CustomerService implements ICustomerService {
 

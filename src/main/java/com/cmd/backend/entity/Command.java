@@ -2,7 +2,6 @@ package com.cmd.backend.entity;
 
 import java.util.List;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Date;
 
 import javax.persistence.*;
@@ -15,9 +14,7 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Command implements Serializable{
 
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 	
 	@Id
@@ -30,37 +27,29 @@ public class Command implements Serializable{
 	@ManyToOne
     private Customer customer;
     
-    @ManyToMany
-    @JoinTable(
-      name = "order_detail", 
-      joinColumns = @JoinColumn(name = "order_id"), 
-      inverseJoinColumns = @JoinColumn(name = "product_id"))
-	private List<Product> orderDetail=new ArrayList<>();
-    
+	
+	@OneToMany(mappedBy = "command",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private List<Detail> details ;
 	
 	
 	public Command() {}
 	
-	public Command( Date orderDate, Boolean valid, String paymentMode, Customer customer,
-			List<Product> orderDetail) {
+	public Command( Date orderDate, Boolean valid, String paymentMode, Customer customer) {
 		super();
 		OrderDate = orderDate;
 		this.valid = valid;
 		this.paymentMode = paymentMode;
 		this.customer = customer;
-		this.orderDetail = orderDetail;
 	}
 	
 	
-	public Command(Long id, Date orderDate, Boolean valid, String paymentMode, Customer customer,
-			List<Product> orderDetail) {
+	public Command(Long id, Date orderDate, Boolean valid, String paymentMode, Customer customer) {
 		super();
 		this.id = id;
 		OrderDate = orderDate;
 		this.valid = valid;
 		this.paymentMode = paymentMode;
 		this.customer = customer;
-		this.orderDetail = orderDetail;
 	}
 	
 	
@@ -94,19 +83,8 @@ public class Command implements Serializable{
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
-	public List<Product> getOrderDetail() {
-		return orderDetail;
-	}
-	public void setOrderDetail(List<Product> orderDetail) {
-		this.orderDetail = orderDetail;
-	}
 	
-	
-	public void addProduct(Product prd) {
-		
-		orderDetail.add(prd);
-		
-	}
+
 	
 	
 	

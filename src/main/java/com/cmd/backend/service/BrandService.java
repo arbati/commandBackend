@@ -6,12 +6,11 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.cmd.backend.dto.BrandDto;
 import com.cmd.backend.entity.Brand;
 import com.cmd.backend.exception.BrandNotFoundExceptin;
+import com.cmd.backend.mapper.BrandMapper;
 import com.cmd.backend.repo.BrandRepository;
-
-import dto.BrandDto;
-import mapper.BrandMapper;
 
 @Service
 public class BrandService implements IBrandService {
