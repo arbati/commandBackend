@@ -15,23 +15,27 @@ public class CommandDto implements Serializable{
 	private Boolean valid;
 	private String paymentMode;
 	
+	private CustomerDto customerDto;
+	
 	
 	public CommandDto() {}
 	
-	public CommandDto( Date orderDate, Boolean valid, String paymentMode) {
+	public CommandDto( Date orderDate, Boolean valid, String paymentMode,CustomerDto customerDto) {
 		super();
 		OrderDate = orderDate;
 		this.valid = valid;
 		this.paymentMode = paymentMode;
-	}
+		this.customerDto=customerDto;
+		}
 	
 	
-	public CommandDto(Long id, Date orderDate, Boolean valid, String paymentMode) {
+	public CommandDto(Long id, Date orderDate, Boolean valid, String paymentMode,CustomerDto customerDto) {
 		super();
 		this.id = id;
 		OrderDate = orderDate;
 		this.valid = valid;
 		this.paymentMode = paymentMode;
+		this.customerDto=customerDto;
 	}
 	
 	
@@ -60,4 +64,15 @@ public class CommandDto implements Serializable{
 		this.paymentMode = paymentMode;
 	}
 
+	public CustomerDto getCustomerDto() {
+		return customerDto;
+	}
+
+	public void setCustomerDto(CustomerDto customerDto) {
+		this.customerDto = customerDto;
+	}
+
+	
+	
+	
 }

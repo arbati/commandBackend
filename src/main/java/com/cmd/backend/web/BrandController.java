@@ -18,8 +18,7 @@ import com.cmd.backend.exception.BrandNotFoundExceptin;
 import com.cmd.backend.service.BrandService;
 
 @RestController
-@RequestMapping("brand-rest")
-@CrossOrigin("*")
+@RequestMapping("api/v1/brand")
 public class BrandController {
 
 		@Autowired

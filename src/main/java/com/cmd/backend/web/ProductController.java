@@ -19,8 +19,8 @@ import com.cmd.backend.exception.ProductNotFoundExceptin;
 import com.cmd.backend.service.ProductService;
 
 @RestController
-@RequestMapping("product-rest")
-@CrossOrigin("*")
+@RequestMapping("api/v1/product")
+// @ CrossOrigin("*")
 public class ProductController {
 
 		@Autowired

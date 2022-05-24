@@ -20,8 +20,7 @@ import com.cmd.backend.exception.CommandNotFoundExceptin;
 import com.cmd.backend.service.CommandService;
 
 @RestController
-@RequestMapping("order-rest")
-@CrossOrigin("*")
+@RequestMapping("api/v1/order")
 public class OrderController {
 
 	@Autowired

@@ -19,8 +19,7 @@ import com.cmd.backend.exception.CustomerNotFoundExceptin;
 import com.cmd.backend.service.CustomerService;
 
 @RestController
-@RequestMapping("customer-rest")
-@CrossOrigin("*")
+@RequestMapping("api/v1/customer")
 public class CustomerController {
 
 		@Autowired

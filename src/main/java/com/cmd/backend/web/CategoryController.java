@@ -19,8 +19,7 @@ import com.cmd.backend.exception.CategoryNotFoundExceptin;
 import com.cmd.backend.service.CategoryService;
 
 @RestController
-@RequestMapping("category-rest")
-@CrossOrigin("*")
+@RequestMapping("api/v1/category")
 public class CategoryController {
 
 		@Autowired
