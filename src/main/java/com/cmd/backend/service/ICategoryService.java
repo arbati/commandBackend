@@ -12,6 +12,8 @@ public interface ICategoryService {
 	public void delete(Long id);
 	public CategoryDto update(CategoryDto item);
 	public List<CategoryDto> getAll();
+	public List<CategoryDto> searchByKeyword(String kw);
+
 	
 	
 }

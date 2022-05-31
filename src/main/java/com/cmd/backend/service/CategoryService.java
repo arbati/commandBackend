@@ -26,6 +26,17 @@ public class CategoryService implements ICategoryService {
 		return CategoryMapper.fromEntity(item);
 	}
 
+	
+	@Override
+	public List<CategoryDto> searchByKeyword(String kw){
+		
+		List<Category> item  = repository.searchByKeyword(kw);
+			
+		return CategoryMapper.fromListEntity(item);
+	}
+	
+	
+	
 	@Override
 	public CategoryDto save(CategoryDto itemDto) {
 		

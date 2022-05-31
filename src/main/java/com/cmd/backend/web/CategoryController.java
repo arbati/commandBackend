@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cmd.backend.dto.CategoryDto;
@@ -42,6 +43,13 @@ public class CategoryController {
 	    }
 	
 		
+		@GetMapping("/search")
+	    public ArrayList<CategoryDto> searchByKeyword(@RequestParam("v") String keyword) {
+		  
+	        return (ArrayList<CategoryDto>) service.searchByKeyword("%"+keyword+"%");
+	    }	
+		
+		
 		@GetMapping("/all")
 	    public ArrayList<CategoryDto> getAll() {
 		  
@@ -68,10 +76,10 @@ public class CategoryController {
 		}
 		
 		
-		@PutMapping("/{id}")
-	    public CategoryDto update(@PathVariable long id, @RequestBody CategoryDto itemDto) {
+		@PutMapping("/")
+	    public CategoryDto update(@RequestBody CategoryDto itemDto) {
 			
-			itemDto.setId(id);
+			//itemDto.setId(id);
 			
 			return  service.update(itemDto);
 			 

@@ -1,9 +1,14 @@
 package com.cmd.backend.mapper;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.BeanUtils;
 
 import com.cmd.backend.dto.CategoryDto;
+import com.cmd.backend.dto.ProductDto;
 import com.cmd.backend.entity.Category;
+import com.cmd.backend.entity.Product;
 
 
 public class CategoryMapper {
@@ -28,6 +33,13 @@ public class CategoryMapper {
 	return item;
 	}
 	
+	
+	public static  List<CategoryDto> fromListEntity(List<Category> listItem) {
+		
+		List<CategoryDto> listItemDto = listItem.stream().map(item -> fromEntity(item)).collect(Collectors.toList());
+	
+		return listItemDto;
+	}
 	
 	
 }

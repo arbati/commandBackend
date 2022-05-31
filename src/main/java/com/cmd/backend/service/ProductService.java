@@ -29,6 +29,17 @@ public class ProductService implements IProductService{
 	}
 
 
+	public List<ProductDto> getByKeyword(String keyword) throws ProductNotFoundExceptin {
+		
+		List<Product> listProd  = productRepository.searchProduct("%"+keyword+"%");
+		
+		return ProductMapper.fromListEntity(listProd);
+	}
+
+	
+	
+	
+	
 	@Override
 	public ProductDto save(ProductDto prd) {
 		
