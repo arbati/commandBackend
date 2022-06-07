@@ -93,8 +93,6 @@ public class CommandBackendApplication implements CommandLineRunner {
 		}
 		
 		
-		
-		
 		List<Product> list=new ArrayList<>();
 		list.add(p1);
 		list.add(p2);
