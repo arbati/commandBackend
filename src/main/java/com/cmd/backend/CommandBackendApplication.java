@@ -69,8 +69,8 @@ public class CommandBackendApplication implements CommandLineRunner {
 		categoryRepository.save(ct5);
 
 		Customer c1=new Customer("Rbati","Abdo","rbati@gmail.com","pass","lot 9 juillet n17","0652515458");
-		Customer c2=new Customer("Kaldi","Rachid","ekaldi@gmail.com","pass00","Av toblik n17","0652115458");
 		customerRepository.save(c1);
+		Customer c2=new Customer("Kaldi","Rachid","ekaldi@gmail.com","pass00","Av toblik n17","0652115458");
 		customerRepository.save(c2);
 		
 		int j=0;
@@ -111,7 +111,7 @@ public class CommandBackendApplication implements CommandLineRunner {
 		detailRepository.save(d2);
 		
 		
-		Command cmd2= new Command(new Date(),false,"Cheque",c2);
+		Command cmd2= new Command(new Date(),true,"Cheque",c2);
 		orderRepository.save(cmd2);
 	
 		Detail d3=new Detail(5,p1,cmd2);
@@ -120,6 +120,53 @@ public class CommandBackendApplication implements CommandLineRunner {
 		detailRepository.save(d4);
 		Detail d5=new Detail(10,p3,cmd2);
 		detailRepository.save(d5);
+		
+		
+		Command cmd3= new Command(new Date("10/02/2019"),false,"Cheque",c1);
+		orderRepository.save(cmd3);
+	
+		detailRepository.save(new Detail(15,p1,cmd3));
+		detailRepository.save(new Detail(51,p2,cmd3));
+		detailRepository.save(new Detail(35,p3,cmd3));
+		
+		Command cmd19= new Command(new Date("11/05/2019"),false,"Cheque",c1);
+		orderRepository.save(cmd19);
+	
+		detailRepository.save(new Detail(15,p1,cmd19));
+		detailRepository.save(new Detail(51,p2,cmd19));
+		detailRepository.save(new Detail(35,p3,cmd19));
+		
+		
+		Command cmd4= new Command(new Date("03/02/2021"),false,"Cheque",c1);
+		orderRepository.save(cmd4);
+	
+		detailRepository.save(new Detail(5,p1,cmd4));
+		detailRepository.save(new Detail(11,p2,cmd4));
+		detailRepository.save(new Detail(32,p3,cmd4));
+		
+		
+		Command cmd5= new Command(new Date("10/02/2018"),false,"Cheque",c1);
+		orderRepository.save(cmd5);
+	
+		detailRepository.save(new Detail(5,p1,cmd5));
+		detailRepository.save(new Detail(11,p2,cmd5));
+		detailRepository.save(new Detail(32,p3,cmd5));
+		
+		
+		Command cmd6= new Command(new Date("05/02/2018"),true,"Cheque",c1);
+		orderRepository.save(cmd6);
+	
+		detailRepository.save(new Detail(5,p1,cmd6));
+		detailRepository.save(new Detail(11,p2,cmd6));
+		detailRepository.save(new Detail(32,p3,cmd6));
+		
+		
+		Command cmd7= new Command(new Date("10/02/2018"),true,"Cheque",c1);
+		orderRepository.save(cmd7);
+	
+		detailRepository.save(new Detail(5,p1,cmd7));
+		detailRepository.save(new Detail(11,p2,cmd7));
+		detailRepository.save(new Detail(32,p3,cmd7));
 		
 		
 	    System.out.println("------------- "+detailRepository.getProducts(cmd2).get(1).getDesignation() + " ------------- ");

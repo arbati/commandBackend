@@ -20,7 +20,7 @@ public class Command implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private Date OrderDate;
+	private Date orderDate;
 	private Boolean valid;
 	private String paymentMode;
 	
@@ -36,7 +36,7 @@ public class Command implements Serializable{
 	
 	public Command( Date orderDate, Boolean valid, String paymentMode, Customer customer) {
 		super();
-		OrderDate = orderDate;
+		this.orderDate = orderDate;
 		this.valid = valid;
 		this.paymentMode = paymentMode;
 		this.customer = customer;
@@ -46,7 +46,7 @@ public class Command implements Serializable{
 	public Command(Long id, Date orderDate, Boolean valid, String paymentMode, Customer customer) {
 		super();
 		this.id = id;
-		OrderDate = orderDate;
+		this.orderDate = orderDate;
 		this.valid = valid;
 		this.paymentMode = paymentMode;
 		this.customer = customer;
@@ -60,10 +60,10 @@ public class Command implements Serializable{
 		this.id = id;
 	}
 	public Date getOrderDate() {
-		return OrderDate;
+		return orderDate;
 	}
 	public void setOrderDate(Date orderDate) {
-		OrderDate = orderDate;
+		this.orderDate = orderDate;
 	}
 	public Boolean getValid() {
 		return valid;

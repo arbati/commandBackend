@@ -22,4 +22,7 @@ public interface DetailRepository extends CrudRepository<Detail, Long> {
 	 List<Detail> getDetails(Command command);
 	
 	
+	
+	 
+	 
 }

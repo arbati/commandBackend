@@ -5,7 +5,7 @@ package com.cmd.backend.dto;
 public class DetailDto {
 
 	private Long id;
-	private Integer quatity;
+	private Integer quantity;
     private ProductDto productDto;
 	private CommandDto commandDto;
 	
@@ -15,17 +15,17 @@ public class DetailDto {
 		
 	}
 	
-	public DetailDto(Integer quatity, ProductDto productDto, CommandDto commandDto) {
+	public DetailDto(Integer quantity, ProductDto productDto, CommandDto commandDto) {
 		super();
-		this.quatity = quatity;
+		this.quantity = quantity;
 		this.productDto = productDto;
 		this.commandDto = commandDto;
 	}
 	
-	public DetailDto(Long id, Integer quatity, ProductDto productDto, CommandDto commandDto) {
+	public DetailDto(Long id, Integer quantity, ProductDto productDto, CommandDto commandDto) {
 		super();
 		this.id = id;
-		this.quatity = quatity;
+		this.quantity = quantity;
 		this.productDto = productDto;
 		this.commandDto = commandDto;
 	}
@@ -36,11 +36,11 @@ public class DetailDto {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public Integer getQuatity() {
-		return quatity;
+	public Integer getQuantity() {
+		return quantity;
 	}
-	public void setQuatity(Integer quatity) {
-		this.quatity = quatity;
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
 	}
 	public ProductDto getProductDto() {
 		return productDto;

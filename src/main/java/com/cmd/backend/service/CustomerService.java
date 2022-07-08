@@ -58,5 +58,16 @@ public class CustomerService implements ICustomerService {
 		
 			return listDto;
 	}
+	
+	
+	@Override
+	public List<CustomerDto> search(String keyWord) {
+		
+		 List<Customer> list = (List<Customer>) repository.searchByKeyWord("%"+keyWord+"%");
+			
+			List<CustomerDto> listDto = list.stream().map(item -> CustomerMapper.fromEntity(item)).collect(Collectors.toList());
+		
+			return listDto;
+	}
 
 }

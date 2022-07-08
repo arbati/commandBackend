@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cmd.backend.dto.CustomerDto;
@@ -47,6 +48,15 @@ public class CustomerController {
 		  
 	        return (ArrayList<CustomerDto>) service.getAll();
 	    }
+		
+		@GetMapping("/search")
+	    public ArrayList<CustomerDto> search(@RequestParam String keyWord) {
+		  
+	        return (ArrayList<CustomerDto>) service.search(keyWord);
+	    }
+		
+		
+		
 		
 		@DeleteMapping("/{id}")
 	    public void delete(@PathVariable long id) {

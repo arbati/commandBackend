@@ -17,7 +17,7 @@ public class Detail implements Serializable{
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	private Integer quatity;
+	private Integer quantity;
 	
 	@ManyToOne
 	@JoinColumn(name = "product_id")
@@ -31,18 +31,18 @@ public class Detail implements Serializable{
 	public Detail() {}
 
 	
-	public Detail(Integer quatity, Product product, Command command) {
+	public Detail(Integer quantity, Product product, Command command) {
 		super();
-		this.quatity = quatity;
+		this.quantity = quantity;
 		this.product = product;
 		this.command = command;
 	}
 
 	
-	public Detail(Long id, Integer quatity, Product product, Command command) {
+	public Detail(Long id, Integer quantity, Product product, Command command) {
 		super();
 		this.id = id;
-		this.quatity = quatity;
+		this.quantity = quantity;
 		this.product = product;
 		this.command = command;
 	}
@@ -59,13 +59,13 @@ public class Detail implements Serializable{
 	}
 
 
-	public Integer getQuatity() {
-		return quatity;
+	public Integer getQuantity() {
+		return quantity;
 	}
 
 
-	public void setQuatity(Integer quatity) {
-		this.quatity = quatity;
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
 	}
 
 

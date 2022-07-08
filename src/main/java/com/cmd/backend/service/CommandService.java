@@ -98,5 +98,23 @@ public class CommandService implements ICommandService {
 		
 	}
 	
+    
+    public List<Object> getCommandByYear(){
+    	
+    	return repository.getCommandByYear();
+    }
+    
+    
+    public List<Object> getTurnoverByYear(){
+    	
+    	return repository.getTurnoverByYear();
+    }
+    
+    
+    public List<Object> getTurnoverByMonth(){
+    	
+    	return repository.getTurnoverByMonth();
+    }
+    
 
 }

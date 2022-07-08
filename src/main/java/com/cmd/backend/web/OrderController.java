@@ -98,5 +98,26 @@ public class OrderController {
 		return listDto;
 	}
 	
+	
+	@GetMapping("orderByYear")
+	public ArrayList<Object> getOrderByYear(){
+		
+		return (ArrayList<Object>) service.getCommandByYear();
+	}
+	
+	@GetMapping("turnoverByYear")
+	public ArrayList<Object> getTurnoverByYear(){
+		
+		return (ArrayList<Object>) service.getTurnoverByYear();
+	}
+	
+	
+	@GetMapping("turnoverByMonth")
+	public ArrayList<Object> getTurnoverByMonth(){
+		
+		return (ArrayList<Object>) service.getTurnoverByMonth();
+	}
+	
+	
 
 }

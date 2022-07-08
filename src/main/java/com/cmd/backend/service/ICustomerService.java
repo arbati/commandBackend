@@ -12,6 +12,7 @@ public interface ICustomerService {
 	public void delete(Long id);
 	public CustomerDto update(CustomerDto item);
 	public List<CustomerDto> getAll();
+	public List<CustomerDto> search(String keyWord);
 	
 	
 }
